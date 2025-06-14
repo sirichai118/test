@@ -1,7 +1,6 @@
-// 💡 รันเฉพาะหน้า booking เท่านั้น
-if (location.origin + location.pathname !== "https://popmartth.rocket-booking.app/booking") return;
-
 (function () {
+  if (location.origin + location.pathname !== "https://popmartth.rocket-booking.app/booking") return;
+
   const delay = (ms) => new Promise(res => setTimeout(res, ms));
   const bookingUrl = "https://popmartth.rocket-booking.app/booking";
 
