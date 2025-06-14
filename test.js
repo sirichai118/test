@@ -1,8 +1,7 @@
-// 💡 Paste ใน DevTools Console
-(function () {
-  if (location.origin + location.pathname !== "https://popmartth.rocket-booking.app/booking") return;
+// 💡 รันเฉพาะหน้า booking เท่านั้น
+if (location.origin + location.pathname !== "https://popmartth.rocket-booking.app/booking") return;
 
-  // ⬇️ ด้านล่างคือโค้ดทั้งหมดของบอทตามปกติ...
+(function () {
   const delay = (ms) => new Promise(res => setTimeout(res, ms));
   const bookingUrl = "https://popmartth.rocket-booking.app/booking";
 
@@ -158,7 +157,10 @@
       await delay(200);
     }
 
-    if (attempt >= 3) return;
+    if (attempt >= 3) {
+      alert("❌ ไม่สามารถเปิด popup เลือกสาขาได้");
+      return;
+    }
 
     await clickButtonByText(branch);
     await clickButtonByText("Next");
